@@ -1,11 +1,12 @@
-import SectionTitle from "./SectionTitle";
 import Button from "./Button";
+import SectionTitle from "./SectionTitle";
 
 const steps = [
   {
     step: "1",
     title: "Crée un groupe",
-    description: "Donne un nom à ton projet : voyage, mariage, maison, cadeau commun…",
+    description:
+      "Donne un nom à ton projet : voyage, mariage, maison, cadeau commun…",
   },
   {
     step: "2",
@@ -15,7 +16,8 @@ const steps = [
   {
     step: "3",
     title: "Épargnez ensemble",
-    description: "Suivez votre progression en temps réel et atteignez votre objectif.",
+    description:
+      "Suivez votre progression en temps réel et atteignez votre objectif.",
   },
 ];
 
@@ -38,12 +40,19 @@ export default function SharedGroups() {
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.step} className="relative rounded-2xl bg-white p-6 shadow-sm">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-sm font-bold text-white">
+            <div
+              key={s.step}
+              className="relative rounded-2xl bg-white p-6 shadow-sm"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent text-sm font-bold text-white">
                 {s.step}
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-foreground">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{s.description}</p>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
+                {s.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {s.description}
+              </p>
               {Number(s.step) < 3 && (
                 <div className="absolute right-0 top-1/2 hidden -translate-y-1/2 translate-x-1/2 text-2xl text-primary/30 md:block">
                   →
@@ -65,7 +74,7 @@ export default function SharedGroups() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 p-6 sm:p-8">
+        <div className="mt-12 rounded-2xl border border-primary/20 bg-linear-to-r from-primary/5 to-accent/5 p-6 sm:p-8">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="text-lg font-semibold text-foreground">
@@ -76,7 +85,12 @@ export default function SharedGroups() {
                 privées et chiffrées. Tu gardes le contrôle total.
               </p>
             </div>
-            <Button href="#premium" variant="primary" size="sm" className="shrink-0">
+            <Button
+              href="#premium"
+              variant="primary"
+              size="sm"
+              className="shrink-0"
+            >
               Essayer maintenant
             </Button>
           </div>

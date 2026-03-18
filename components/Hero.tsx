@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Button from "./Button";
 import AppStoreBadge from "./AppStoreBadge";
-import { APP_STORE_URL } from "@/lib/constants";
+import Button from "./Button";
+import heroImg from "@/assets/images/hero-section.jpg";
 
 const bullets = [
   { icon: "✦", text: "Simple" },
@@ -11,7 +11,7 @@ const bullets = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-surface pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-linear-to-b from-white to-surface pt-28 pb-16 sm:pt-36 sm:pb-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="animate-fade-in-up text-center lg:text-left">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
@@ -24,14 +24,14 @@ export default function Hero() {
 
           <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Reprends le contrôle de ton budget,{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               sans prise de tête.
             </span>
           </h1>
 
           <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
-            Suis tes dépenses et recettes, crée des catégories, reçois des alertes
-            et atteins tes objectifs d&apos;épargne — seul ou en groupe.
+            Suis tes dépenses et recettes, crée des catégories, reçois des
+            alertes et atteins tes objectifs d&apos;épargne — seul ou en groupe.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
@@ -44,15 +44,16 @@ export default function Hero() {
 
         <div className="animate-fade-in-up-delay-2 relative flex justify-center">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl" />
+            <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-primary/20 to-accent/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white p-2 shadow-2xl">
               <Image
-                src="/mockups/iphone.png"
+                src={heroImg}
                 alt="Budget Copain — Écran principal de l'app"
                 width={300}
                 height={600}
-                className="rounded-[2rem]"
+                className="rounded-4xl"
                 priority
+                placeholder="blur"
               />
             </div>
           </div>

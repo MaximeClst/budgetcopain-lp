@@ -1,10 +1,14 @@
+import budgetImg from "@/assets/images/budget.png";
+import depenseImg from "@/assets/images/depense.png";
+import projetImg from "@/assets/images/projet.png";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
+// import statistiqueImg from "@/assets/images/statistique.png";
 
 const screenshots = [
-  { src: "/mockups/screen-1.png", alt: "Vue d'ensemble du budget" },
-  { src: "/mockups/screen-2.png", alt: "Catégories et dépenses" },
-  { src: "/mockups/screen-3.png", alt: "Groupes d'épargne partagés" },
+  { src: budgetImg, alt: "Vue d'ensemble du budget" },
+  { src: depenseImg, alt: "Catégories et dépenses" },
+  { src: projetImg, alt: "Groupes d'épargne partagés" },
   { src: "/mockups/screen-4.png", alt: "Statistiques et tendances" },
 ];
 
@@ -24,7 +28,7 @@ export default function Screenshots() {
               key={s.alt}
               className="group overflow-hidden rounded-2xl border border-gray-100 bg-surface p-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="relative aspect-[9/19] overflow-hidden rounded-xl bg-gradient-to-b from-primary/10 to-accent/10">
+              <div className="relative aspect-9/19 overflow-hidden rounded-xl bg-linear-to-b from-primary/10 to-accent/10">
                 <Image
                   src={s.src}
                   alt={s.alt}
@@ -34,7 +38,9 @@ export default function Screenshots() {
                   loading={i < 2 ? "eager" : "lazy"}
                 />
               </div>
-              <p className="mt-2 text-center text-xs font-medium text-muted">{s.alt}</p>
+              <p className="mt-2 text-center text-xs font-medium text-muted">
+                {s.alt}
+              </p>
             </div>
           ))}
         </div>

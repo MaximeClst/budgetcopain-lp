@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     locale: "fr_FR",
-    url: "https://budgetcopain.app",
+    url: "https://budgetcopain.com",
     siteName: "Budget Copain",
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description,
     images: ["/og-image.png"],
   },
-  metadataBase: new URL("https://budgetcopain.app"),
+  metadataBase: new URL("https://budgetcopain.com"),
 };
 
 export default function RootLayout({

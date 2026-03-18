@@ -1,10 +1,20 @@
-import Link from "next/link";
+import logo from "@/assets/logo/Logo-bc.jpg";
+import Image from "next/image";
 import AppStoreBadge from "./AppStoreBadge";
 
 const links = [
-  { label: "Politique de confidentialité", href: "/privacy" },
-  { label: "Conditions d'utilisation", href: "/terms" },
-  { label: "Support", href: "mailto:support@budgetcopain.app" },
+  {
+    label: "Politique de confidentialité",
+    href: "https://thread-authority-138.notion.site/Politique-de-confidentialit-BudgetCopain-2ea135f92ea780558660e0265ae510d6?source=copy_link",
+  },
+  {
+    label: "Conditions d'utilisation",
+    href: "https://thread-authority-138.notion.site/Politique-de-confidentialit-BudgetCopain-2ea135f92ea780558660e0265ae510d6?source=copy_link",
+  },
+  {
+    label: "Support",
+    href: "https://thread-authority-138.notion.site/Support-BudgetCopain-2e1135f92ea780f7a152c7634a3f9b04?source=copy_link",
+  },
 ];
 
 export default function Footer() {
@@ -14,9 +24,13 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-8 text-center">
           <div>
             <div className="flex items-center justify-center gap-2 text-xl font-bold text-foreground">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent text-sm text-white">
-                B
-              </span>
+              <Image
+                src={logo}
+                alt="Budget Copain"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
               Budget Copain
             </div>
             <p className="mt-2 text-sm text-muted">
@@ -28,13 +42,15 @@ export default function Footer() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {links.map((link) => (
-              <Link
+              <a
                 key={link.label}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-muted transition-colors hover:text-foreground"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
 
