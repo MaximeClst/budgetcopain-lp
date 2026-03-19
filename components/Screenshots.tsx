@@ -3,13 +3,13 @@ import depenseImg from "@/assets/images/depense.png";
 import projetImg from "@/assets/images/projet.png";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
-// import statistiqueImg from "@/assets/images/statistique.png";
+import statsImg from "@/assets/images/stats.jpg";
 
 const screenshots = [
   { src: budgetImg, alt: "Vue d'ensemble du budget" },
   { src: depenseImg, alt: "Catégories et dépenses" },
   { src: projetImg, alt: "Groupes d'épargne partagés" },
-  { src: "/mockups/screen-4.png", alt: "Statistiques et tendances" },
+  { src: statsImg, alt: "Statistiques et tendances" },
 ];
 
 export default function Screenshots() {
