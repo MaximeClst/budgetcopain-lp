@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "UX4A9T87KR.com.maxclst.budgetcopain",
+        "paths": [
+          "/invite/*",
+          "/join/*"
+        ]
+      }
+    ]
+  }
+}
