@@ -2,58 +2,112 @@ import SectionTitle from "./SectionTitle";
 import Button from "./Button";
 import { APP_STORE_URL } from "@/lib/constants";
 
+const plans = [
+  {
+    name: "Mensuel",
+    price: "4,99 €",
+    period: "/ mois",
+    note: "7 jours d'essai gratuit",
+    cta: "Commencer l'essai",
+    variant: "secondary" as const,
+    highlight: false,
+  },
+  {
+    name: "À vie",
+    price: "24,99 €",
+    period: "une fois",
+    note: "Un seul paiement, sans abonnement",
+    cta: "Passer à vie",
+    variant: "primary" as const,
+    highlight: true,
+    badge: "Le plus avantageux",
+    hint: "Rentabilisé en ~5 mois",
+  },
+];
+
 const features = [
-  "Vision claire de vos dépenses",
-  "Alertes intelligentes avec suggestions",
-  "Catégories adaptées à votre vie",
-  "Projets d'épargne partagés avec vos proches",
-  "Accès à vie",
+  "Transactions & catégories illimitées",
+  "Projets perso & communs illimités",
+  "Alertes intelligentes de budget",
+  "Suivi et statistiques détaillés",
+  "Sauvegarde et synchronisation",
   "Toutes les futures mises à jour",
 ];
 
 export default function Pricing() {
   return (
     <section id="premium" className="scroll-mt-20 bg-surface py-20 sm:py-28">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <SectionTitle
           tag="Premium"
-          title="Passe au niveau supérieur"
-          description="Débloquer Budget Copain Premium pour profiter de toutes les fonctionnalités sans limites."
+          title="Choisis ta formule"
+          description="Toutes les fonctionnalités Premium, sans limite. Commence par l'essai gratuit, ou débloque l'accès à vie en un paiement."
         />
 
-        <div className="mt-16">
-          <div className="relative flex flex-col rounded-[2rem] border border-primary/20 bg-white p-8 shadow-card sm:p-10">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1.5 text-xs font-bold text-white shadow-glow">
-              Paiement unique
-            </span>
+        {/* Offres */}
+        <div className="mt-16 grid items-stretch gap-6 md:grid-cols-2">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`relative flex flex-col rounded-[2rem] border bg-white p-8 ${
+                plan.highlight
+                  ? "border-primary/30 shadow-card"
+                  : "border-primary/10 shadow-soft"
+              }`}
+            >
+              {plan.badge && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-linear-to-r from-primary to-accent px-4 py-1.5 text-xs font-bold text-white shadow-glow">
+                  {plan.badge}
+                </span>
+              )}
 
-            <h3 className="text-center text-lg font-semibold text-foreground">
-              À vie
-            </h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                {plan.name}
+              </h3>
 
-            <div className="mt-4 flex items-baseline justify-center gap-1">
-              <span className="text-5xl font-extrabold text-foreground">
-                24,99&nbsp;€
-              </span>
-              <span className="text-sm text-muted">unique</span>
+              <div className="mt-3 flex items-baseline gap-1.5">
+                <span className="text-5xl font-extrabold tracking-tight text-foreground">
+                  {plan.price}
+                </span>
+                <span className="text-sm text-muted">{plan.period}</span>
+              </div>
+
+              <p className="mt-2 text-sm text-muted">{plan.note}</p>
+
+              {plan.hint && (
+                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
+                  ✦ {plan.hint}
+                </span>
+              )}
+
+              <Button
+                href={APP_STORE_URL}
+                variant={plan.variant}
+                size="md"
+                className="mt-auto w-full"
+                external
+              >
+                {plan.cta}
+              </Button>
             </div>
+          ))}
+        </div>
 
-            <p className="mt-2 text-center text-sm text-muted">
-              Un seul paiement, pas d&apos;abonnement
-            </p>
-
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {features.map((f) => (
-                <li
-                  key={f}
-                  className="flex items-start gap-2 text-sm text-muted"
-                >
+        {/* Fonctionnalités incluses */}
+        <div className="mt-8 rounded-[2rem] border border-primary/10 bg-white p-8 shadow-soft">
+          <p className="text-center text-sm font-semibold text-foreground">
+            Les deux formules incluent
+          </p>
+          <ul className="mx-auto mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
+            {features.map((f) => (
+              <li key={f} className="flex items-start gap-2.5 text-sm text-muted">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
                   <svg
-                    className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                    className="h-3 w-3 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeWidth={2.5}
+                    strokeWidth={3}
                   >
                     <path
                       strokeLinecap="round"
@@ -61,25 +115,16 @@ export default function Pricing() {
                       d="M4.5 12.75l6 6 9-13.5"
                     />
                   </svg>
-                  {f}
-                </li>
-              ))}
-            </ul>
-
-            <Button
-              href={APP_STORE_URL}
-              variant="primary"
-              size="md"
-              className="mt-10 w-full"
-              external
-            >
-              Passer Premium
-            </Button>
-          </div>
+                </span>
+                {f}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <p className="mt-8 text-center text-sm text-muted">
-          Satisfait ou remboursé. Aucun abonnement.
+          Essai gratuit de 7 jours sur l&apos;abonnement · Sans engagement ·
+          Paiement sécurisé via l&apos;App Store
         </p>
       </div>
     </section>
