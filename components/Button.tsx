@@ -11,16 +11,16 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/25 hover:shadow-primary/40",
+    "bg-linear-to-br from-primary to-accent text-white shadow-glow hover:brightness-105 hover:-translate-y-0.5 active:translate-y-0",
   secondary:
-    "bg-white text-primary border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5",
+    "bg-white text-primary border-2 border-primary/15 hover:border-primary/30 hover:bg-primary/5 hover:-translate-y-0.5 active:translate-y-0",
   outline:
-    "bg-transparent text-foreground border border-gray-300 hover:border-gray-400 hover:bg-surface",
+    "bg-transparent text-foreground border border-foreground/15 hover:border-foreground/25 hover:bg-surface",
 };
 
 const sizes = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-base",
+  sm: "px-5 py-2.5 text-sm",
+  md: "px-6 py-3.5 text-base",
   lg: "px-8 py-4 text-lg",
 };
 

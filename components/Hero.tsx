@@ -3,18 +3,23 @@ import AppStoreBadge from "./AppStoreBadge";
 import Button from "./Button";
 import heroImg from "@/assets/images/hero-section.jpg";
 
-const bullets = [
-  { icon: "✦", text: "Simple" },
-  { icon: "⚡", text: "Rapide" },
-  { icon: "♡", text: "Pensé pour le quotidien" },
+const floatingCards = [
+  { emoji: "🎯", label: "Objectif atteint", sub: "+250 € ce mois", side: "left" },
+  { emoji: "🔔", label: "Budget courses", sub: "85 % utilisé", side: "right" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-white to-surface pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <section className="relative overflow-hidden bg-linear-to-b from-surface via-white to-white pt-28 pb-16 sm:pt-36 sm:pb-24">
+      {/* Décor d'arrière-plan */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-linear-to-br from-primary/20 via-accent/15 to-transparent blur-3xl"
+      />
+
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="animate-fade-in-up text-center lg:text-left">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-1.5 text-sm font-medium text-primary shadow-soft">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
@@ -22,16 +27,17 @@ export default function Hero() {
             Disponible sur iOS
           </div>
 
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Reprends le contrôle de ton budget,{" "}
+          <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            Ton budget,{" "}
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              sans prise de tête.
+              enfin simple.
             </span>
           </h1>
 
-          <p className="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
-            Suis tes dépenses et recettes, crée des catégories, reçois des
-            alertes et atteins tes objectifs d&apos;épargne — seul ou en groupe.
+          <p className="mx-auto mt-6 max-w-lg text-pretty text-lg leading-relaxed text-muted sm:text-xl lg:mx-0">
+            Suis tes dépenses, crée tes catégories, reçois des alertes et
+            atteins tes objectifs d&apos;épargne — seul ou à plusieurs. Ton
+            copain budget, dans ta poche.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
@@ -40,35 +46,56 @@ export default function Hero() {
               Découvrir Premium
             </Button>
           </div>
+
+          <div className="mt-8 flex items-center justify-center gap-5 text-sm text-muted lg:justify-start">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="text-amber-400">★★★★★</span>
+              <span className="font-medium text-foreground">5,0</span>
+            </span>
+            <span className="h-4 w-px bg-foreground/10" />
+            <span>Gratuit pour commencer</span>
+            <span className="h-4 w-px bg-foreground/10" />
+            <span>100 % privé</span>
+          </div>
         </div>
 
         <div className="animate-fade-in-up-delay-2 relative flex justify-center">
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-primary/20 to-accent/20 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white p-2 shadow-2xl">
+          <div className="relative animate-float">
+            <div className="absolute -inset-6 rounded-[3rem] bg-linear-to-br from-primary/25 to-accent/25 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2.75rem] border border-white/60 bg-white p-2 shadow-card">
               <Image
                 src={heroImg}
                 alt="Budget Copain — Écran principal de l'app"
                 width={300}
                 height={600}
-                className="rounded-4xl"
+                className="rounded-[2.25rem]"
                 priority
                 placeholder="blur"
               />
             </div>
           </div>
 
-          <div className="absolute -right-2 top-12 flex flex-col gap-3 sm:right-0">
-            {bullets.map((b) => (
-              <div
-                key={b.text}
-                className="flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-foreground shadow-lg"
-              >
-                <span className="text-primary">{b.icon}</span>
-                {b.text}
+          {/* Cartes flottantes */}
+          {floatingCards.map((c) => (
+            <div
+              key={c.label}
+              className={`absolute flex items-center gap-3 rounded-2xl border border-white/60 bg-white/90 px-4 py-3 shadow-card backdrop-blur ${
+                c.side === "left"
+                  ? "-left-2 top-16 sm:-left-6"
+                  : "-right-2 bottom-20 sm:-right-6"
+              }`}
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-xl">
+                {c.emoji}
+              </span>
+              <div className="text-left">
+                <p className="text-sm font-semibold text-foreground">
+                  {c.label}
+                </p>
+                <p className="text-xs text-muted">{c.sub}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-lg">
+    <header className="fixed top-0 z-50 w-full border-b border-primary/5 bg-white/75 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link
           href="/"
@@ -40,7 +40,7 @@ export default function Header() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
+            className="rounded-full bg-linear-to-br from-primary to-accent px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105"
           >
             Télécharger
           </a>

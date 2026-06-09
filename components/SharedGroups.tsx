@@ -71,10 +71,10 @@ export default function SharedGroups() {
           {modes.map((m) => (
             <div
               key={m.title}
-              className={`rounded-2xl border p-6 sm:p-8 ${
+              className={`rounded-3xl border p-7 sm:p-8 ${
                 m.highlight
-                  ? "border-primary/30 bg-linear-to-br from-primary/5 to-accent/5 shadow-md"
-                  : "border-gray-100 bg-white shadow-sm"
+                  ? "border-primary/20 bg-linear-to-br from-primary/8 to-accent/8 shadow-card"
+                  : "border-primary/5 bg-white shadow-soft"
               }`}
             >
               <div
@@ -99,7 +99,7 @@ export default function SharedGroups() {
           {screenshots.map((s, i) => (
             <div
               key={s.alt}
-              className="group overflow-hidden rounded-2xl border border-gray-100 bg-white p-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group overflow-hidden rounded-3xl border border-primary/5 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card"
             >
               <div className="relative aspect-9/19 overflow-hidden rounded-xl bg-linear-to-b from-primary/10 to-accent/10">
                 <Image
@@ -123,7 +123,7 @@ export default function SharedGroups() {
           {steps.map((s) => (
             <div
               key={s.step}
-              className="relative rounded-2xl bg-white p-6 shadow-sm"
+              className="relative rounded-3xl border border-primary/5 bg-white p-6 shadow-soft"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent text-sm font-bold text-white">
                 {s.step}
@@ -148,7 +148,7 @@ export default function SharedGroups() {
           {useCases.map((uc) => (
             <div
               key={uc.label}
-              className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              className="flex items-center gap-3 rounded-2xl border border-primary/5 bg-white px-5 py-4 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
             >
               <span className="text-2xl">{uc.emoji}</span>
               <span className="font-medium text-foreground">{uc.label}</span>

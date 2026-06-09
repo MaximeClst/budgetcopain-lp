@@ -26,7 +26,7 @@ export default function Screenshots() {
           {screenshots.map((s, i) => (
             <div
               key={s.alt}
-              className="group overflow-hidden rounded-2xl border border-gray-100 bg-surface p-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group overflow-hidden rounded-3xl border border-primary/5 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card"
             >
               <div className="relative aspect-9/19 overflow-hidden rounded-xl bg-linear-to-b from-primary/10 to-accent/10">
                 <Image

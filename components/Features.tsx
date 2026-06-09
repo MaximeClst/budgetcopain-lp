@@ -142,17 +142,17 @@ export default function Features() {
           {features.map((f) => (
             <div
               key={f.title}
-              className={`group rounded-2xl border p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${
+              className={`group rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card ${
                 f.highlight
-                  ? "border-primary/30 bg-linear-to-br from-primary/5 to-accent/5 shadow-md"
-                  : "border-gray-100 bg-white hover:border-gray-200"
+                  ? "border-primary/20 bg-linear-to-br from-primary/8 to-accent/8 shadow-soft"
+                  : "border-primary/5 bg-white shadow-soft hover:border-primary/15"
               }`}
             >
               <div
-                className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
+                className={`flex h-12 w-12 items-center justify-center rounded-2xl transition-colors ${
                   f.highlight
-                    ? "bg-primary text-white"
-                    : "bg-surface text-primary group-hover:bg-primary group-hover:text-white"
+                    ? "bg-linear-to-br from-primary to-accent text-white"
+                    : "bg-primary/8 text-primary group-hover:bg-primary group-hover:text-white"
                 }`}
               >
                 {f.icon}

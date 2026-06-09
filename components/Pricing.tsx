@@ -22,8 +22,8 @@ export default function Pricing() {
         />
 
         <div className="mt-16">
-          <div className="relative flex flex-col rounded-2xl border border-primary bg-white p-8 shadow-xl shadow-primary/10 sm:p-10">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-bold text-white">
+          <div className="relative flex flex-col rounded-[2rem] border border-primary/20 bg-white p-8 shadow-card sm:p-10">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1.5 text-xs font-bold text-white shadow-glow">
               Paiement unique
             </span>
 
