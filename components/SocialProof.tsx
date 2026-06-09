@@ -1,8 +1,8 @@
 const stats = [
-  { value: "12 000+", label: "Utilisateurs actifs" },
-  { value: "4 500+", label: "Projets créés" },
-  { value: "2,3 M€", label: "De budgets suivis" },
-  { value: "4.8 ★", label: "Note App Store" },
+  { value: "5,0 ★", label: "Note sur l'App Store" },
+  { value: "5", label: "Avis vérifiés" },
+  { value: "0 €", label: "Pour commencer" },
+  { value: "100 % privé", label: "Données chiffrées" },
 ];
 
 export default function SocialProof() {

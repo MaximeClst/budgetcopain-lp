@@ -5,28 +5,36 @@ import SectionTitle from "./SectionTitle";
 
 const faqs = [
   {
-    q: "Comment fonctionnent les groupes d'épargne partagés ?",
-    a: "Crée un groupe, définis un objectif et partage le lien d'invitation. Chaque membre peut contribuer et suivre la progression en temps réel. Le créateur garde le contrôle total du groupe.",
+    q: "Comment fonctionnent les projets partagés ?",
+    a: "Crée un projet Perso pour épargner seul, ou Commun pour partager les dépenses à plusieurs. Pour un projet commun, partage le lien d'invitation : chaque membre ajoute ses dépenses et l'app calcule automatiquement les soldes et qui doit combien à qui. Tu restes l'admin du projet.",
+  },
+  {
+    q: "Combien coûte Budget Copain Premium ?",
+    a: "Deux formules au choix : l'abonnement à 4,99 €/mois (avec 7 jours d'essai gratuit), ou l'accès à vie à 24,99 € en paiement unique, sans abonnement. Les deux débloquent toutes les fonctionnalités Premium.",
+  },
+  {
+    q: "Y a-t-il un essai gratuit ?",
+    a: "Oui, l'abonnement mensuel inclut 7 jours d'essai gratuit. Tu peux tout tester sans engagement et annuler avant la fin de l'essai si l'app ne te convient pas.",
   },
   {
     q: "Puis-je annuler mon abonnement Premium ?",
-    a: "Oui, tu peux annuler à tout moment depuis les réglages de ton compte Apple. Tu conserves l'accès Premium jusqu'à la fin de la période en cours.",
+    a: "Oui. L'abonnement mensuel (4,99 €/mois) s'annule à tout moment depuis les réglages de ton compte Apple, et tu gardes l'accès jusqu'à la fin de la période en cours. L'accès à vie (24,99 €) est un achat unique : il n'y a rien à annuler.",
   },
   {
     q: "Est-ce que mes données sont privées ?",
-    a: "Absolument. Tes données financières sont stockées localement sur ton appareil et chiffrées. Nous ne vendons jamais tes données à des tiers.",
+    a: "Absolument. Tes données financières sont chiffrées et ne sont jamais revendues à des tiers.",
   },
   {
     q: "L'application est-elle gratuite ?",
-    a: "Oui ! Budget Copain est gratuit avec toutes les fonctionnalités essentielles. Premium débloque des options avancées comme les groupes illimités, l'export et les statistiques détaillées.",
+    a: "Oui ! Budget Copain est gratuit avec toutes les fonctionnalités essentielles pour gérer ton budget. Premium débloque les options avancées comme les projets perso et communs illimités.",
   },
   {
-    q: "Que comprend l'abonnement Premium ?",
-    a: "Premium inclut : transactions et catégories illimitées, groupes d'épargne partagés illimités, rappels avancés, statistiques détaillées, export CSV/PDF, thèmes personnalisés et support prioritaire.",
+    q: "Que comprend Premium ?",
+    a: "Premium inclut : transactions et catégories illimitées, projets perso et communs illimités, alertes intelligentes, et toutes les futures mises à jour.",
   },
   {
     q: "Comment restaurer un achat ?",
-    a: "Va dans Réglages > Premium > Restaurer les achats. Ton abonnement sera automatiquement restauré si tu utilises le même compte Apple.",
+    a: "Va dans Réglages > Premium > Restaurer les achats. Ton accès sera automatiquement restauré si tu utilises le même compte Apple.",
   },
   {
     q: "L'app est-elle disponible sur Android ?",
@@ -70,7 +78,7 @@ export default function FAQ() {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  open === i ? "max-h-40 pb-5" : "max-h-0"
+                  open === i ? "max-h-80 pb-5" : "max-h-0"
                 }`}
               >
                 <p className="text-sm leading-relaxed text-muted">{faq.a}</p>
