@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AppStoreBadge from "./AppStoreBadge";
 import Button from "./Button";
+import { Badge } from "@/components/ui/badge";
 import heroImg from "@/assets/images/hero-section.jpg";
 
 const floatingCards = [
@@ -19,13 +20,16 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="animate-fade-in-up text-center lg:text-left">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-1.5 text-sm font-medium text-primary shadow-soft">
+          <Badge
+            variant="brand"
+            className="mb-5 bg-white px-4 py-1.5 text-sm font-medium shadow-soft"
+          >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
             Disponible sur iOS
-          </div>
+          </Badge>
 
           <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Sache enfin où part{" "}

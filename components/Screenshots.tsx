@@ -3,6 +3,7 @@ import depenseImg from "@/assets/images/depense.png";
 import projetImg from "@/assets/images/projet.png";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
+import { Card } from "@/components/ui/card";
 import statsImg from "@/assets/images/stats.jpg";
 
 const screenshots = [
@@ -24,9 +25,9 @@ export default function Screenshots() {
 
         <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {screenshots.map((s, i) => (
-            <div
+            <Card
               key={s.alt}
-              className="group overflow-hidden rounded-3xl border border-primary/5 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card"
+              className="group gap-0 overflow-hidden p-2 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card"
             >
               <div className="relative aspect-9/19 overflow-hidden rounded-xl bg-linear-to-b from-primary/10 to-accent/10">
                 <Image
@@ -41,7 +42,7 @@ export default function Screenshots() {
               <p className="mt-2 text-center text-xs font-medium text-muted">
                 {s.alt}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

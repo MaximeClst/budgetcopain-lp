@@ -1,4 +1,5 @@
 import SectionTitle from "./SectionTitle";
+import { Card } from "@/components/ui/card";
 
 const features = [
   {
@@ -140,12 +141,12 @@ export default function Features() {
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
-            <div
+            <Card
               key={f.title}
-              className={`group rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card ${
+              className={`group gap-0 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card ${
                 f.highlight
-                  ? "border-primary/20 bg-linear-to-br from-primary/8 to-accent/8 shadow-soft"
-                  : "border-primary/5 bg-white shadow-soft hover:border-primary/15"
+                  ? "border-primary/20 bg-linear-to-br from-primary/8 to-accent/8"
+                  : "hover:border-primary/15"
               }`}
             >
               <div
@@ -163,7 +164,7 @@ export default function Features() {
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 {f.description}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

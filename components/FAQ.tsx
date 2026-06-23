@@ -1,7 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import SectionTitle from "./SectionTitle";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -43,8 +46,6 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <section id="faq" className="scroll-mt-20 bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
@@ -54,38 +55,14 @@ export default function FAQ() {
           description="Tu as une question ? On a sûrement la réponse."
         />
 
-        <div className="mt-12 divide-y divide-gray-100">
+        <Accordion type="single" collapsible className="mt-12">
           {faqs.map((faq, i) => (
-            <div key={i}>
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-primary"
-              >
-                <span className="pr-4 text-base font-medium text-foreground">
-                  {faq.q}
-                </span>
-                <svg
-                  className={`h-5 w-5 shrink-0 text-muted transition-transform duration-200 ${
-                    open === i ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  open === i ? "max-h-80 pb-5" : "max-h-0"
-                }`}
-              >
-                <p className="text-sm leading-relaxed text-muted">{faq.a}</p>
-              </div>
-            </div>
+            <AccordionItem key={i} value={`item-${i}`}>
+              <AccordionTrigger>{faq.q}</AccordionTrigger>
+              <AccordionContent>{faq.a}</AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );

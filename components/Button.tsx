@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button as UIButton } from "@/components/ui/button";
 
 type ButtonProps = {
   href: string;
@@ -9,42 +10,27 @@ type ButtonProps = {
   external?: boolean;
 };
 
-const variants = {
-  primary:
-    "bg-linear-to-br from-primary to-accent text-white shadow-glow hover:brightness-105 hover:-translate-y-0.5 active:translate-y-0",
-  secondary:
-    "bg-white text-primary border-2 border-primary/15 hover:border-primary/30 hover:bg-primary/5 hover:-translate-y-0.5 active:translate-y-0",
-  outline:
-    "bg-transparent text-foreground border border-foreground/15 hover:border-foreground/25 hover:bg-surface",
-};
-
-const sizes = {
-  sm: "px-5 py-2.5 text-sm",
-  md: "px-6 py-3.5 text-base",
-  lg: "px-8 py-4 text-lg",
-};
-
+/**
+ * Bouton CTA de marque (lien). Fine surcouche du primitif shadcn
+ * `@/components/ui/button` qui conserve l'API historique (href/variant/size).
+ */
 export default function Button({
   href,
   variant = "primary",
   size = "md",
-  className = "",
+  className,
   children,
   external = false,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
-
-  if (external) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
-        {children}
-      </a>
-    );
-  }
-
   return (
-    <Link href={href} className={classes}>
-      {children}
-    </Link>
+    <UIButton asChild variant={variant} size={size} className={className}>
+      {external ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      ) : (
+        <Link href={href}>{children}</Link>
+      )}
+    </UIButton>
   );
 }

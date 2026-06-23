@@ -1,5 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import Button from "./Button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { APP_STORE_URL } from "@/lib/constants";
 
 const plans = [
@@ -47,12 +49,12 @@ export default function Pricing() {
         {/* Offres */}
         <div className="mt-16 grid items-stretch gap-6 md:grid-cols-2">
           {plans.map((plan) => (
-            <div
+            <Card
               key={plan.name}
-              className={`relative flex flex-col rounded-[2rem] border bg-white p-8 ${
+              className={`relative gap-0 rounded-[2rem] p-8 ${
                 plan.highlight
                   ? "border-primary/30 shadow-card"
-                  : "border-primary/10 shadow-soft"
+                  : "border-primary/10"
               }`}
             >
               {plan.badge && (
@@ -75,9 +77,9 @@ export default function Pricing() {
               <p className="mt-2 text-sm text-muted">{plan.note}</p>
 
               {plan.hint && (
-                <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
+                <Badge variant="brand" className="mt-3 px-3 py-1">
                   ✦ {plan.hint}
-                </span>
+                </Badge>
               )}
 
               <Button
@@ -89,12 +91,12 @@ export default function Pricing() {
               >
                 {plan.cta}
               </Button>
-            </div>
+            </Card>
           ))}
         </div>
 
         {/* Fonctionnalités incluses */}
-        <div className="mt-8 rounded-[2rem] border border-primary/10 bg-white p-8 shadow-soft">
+        <Card className="mt-8 gap-0 rounded-[2rem] border-primary/10 p-8">
           <p className="text-center text-sm font-semibold text-foreground">
             Les deux formules incluent
           </p>
@@ -120,7 +122,7 @@ export default function Pricing() {
               </li>
             ))}
           </ul>
-        </div>
+        </Card>
 
         <p className="mt-8 text-center text-sm text-muted">
           Essai gratuit de 7 jours sur l&apos;abonnement · Sans engagement ·
