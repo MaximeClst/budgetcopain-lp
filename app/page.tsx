@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
 import Features from "@/components/Features";
-import SharedGroups from "@/components/SharedGroups";
 import Screenshots from "@/components/Screenshots";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -17,7 +16,6 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <Features />
-        <SharedGroups />
         <Screenshots />
         <Pricing />
         <FAQ />

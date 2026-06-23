@@ -13,9 +13,9 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["600", "700", "800"],
 });
 
-const title = "Budget Copain — Reprends le contrôle de ton budget";
+const title = "Budget Copain — Sache enfin où part ton argent";
 const description =
-  "Suivi de dépenses simple et amical. Catégories, alertes, projets d'épargne partagés et bien plus. Télécharge gratuitement sur l'App Store.";
+  "Le suivi de tes dépenses du quotidien, simple et privé. Catégorise en deux taps, vois où va ton argent et reçois une alerte avant de dépasser. Gratuit sur l'App Store.";
 
 export const metadata: Metadata = {
   title,
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   keywords: [
     "budget",
     "finance personnelle",
-    "épargne",
     "suivi dépenses",
+    "gestion dépenses quotidien",
+    "catégories de dépenses",
     "app iOS",
-    "groupes épargne",
   ],
   openGraph: {
     title,

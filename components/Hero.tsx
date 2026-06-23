@@ -4,7 +4,7 @@ import Button from "./Button";
 import heroImg from "@/assets/images/hero-section.jpg";
 
 const floatingCards = [
-  { emoji: "🎯", label: "Objectif atteint", sub: "+250 € ce mois", side: "left" },
+  { emoji: "🍽️", label: "Restaurants", sub: "120 € ce mois", side: "left" },
   { emoji: "🔔", label: "Budget courses", sub: "85 % utilisé", side: "right" },
 ];
 
@@ -28,16 +28,15 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Ton budget,{" "}
+            Sache enfin où part{" "}
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              enfin simple.
+              ton argent.
             </span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-lg text-pretty text-lg leading-relaxed text-muted sm:text-xl lg:mx-0">
-            Suis tes dépenses, crée tes catégories, reçois des alertes et
-            atteins tes objectifs d&apos;épargne — seul ou à plusieurs. Ton
-            copain budget, dans ta poche.
+            Suis tes dépenses du quotidien en deux taps, vois où va ton argent et
+            garde le contrôle de ton budget — sans tableur ni prise de tête.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">

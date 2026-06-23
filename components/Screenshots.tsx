@@ -8,7 +8,7 @@ import statsImg from "@/assets/images/stats.jpg";
 const screenshots = [
   { src: budgetImg, alt: "Vue d'ensemble du budget" },
   { src: depenseImg, alt: "Catégories et dépenses" },
-  { src: projetImg, alt: "Groupes d'épargne partagés" },
+  { src: projetImg, alt: "Projets & objectifs" },
   { src: statsImg, alt: "Statistiques et tendances" },
 ];
 

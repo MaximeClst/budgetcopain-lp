@@ -17,9 +17,9 @@ const features = [
         />
       </svg>
     ),
-    title: "Suivi dépenses & recettes",
+    title: "Saisie en 2 taps",
     description:
-      "Ajoute tes transactions en deux taps. Visualise où va ton argent en un coup d'œil.",
+      "Ajoute une dépense ou une rentrée en deux taps. Le suivi du quotidien devient un réflexe, sans effort.",
   },
   {
     icon: (
@@ -64,7 +64,7 @@ const features = [
     ),
     title: "Alertes de dépassement",
     description:
-      "Reçois une notification quand tu approches ou dépasses ton budget.",
+      "Une notification dès que tu approches ou dépasses ton budget. Tu gardes le contrôle avant la fin du mois.",
   },
   {
     icon: (
@@ -82,9 +82,10 @@ const features = [
         />
       </svg>
     ),
-    title: "Projets & objectifs",
+    title: "Vois où part ton argent",
     description:
-      "Définis un objectif d'épargne et suis ta progression jour après jour.",
+      "Répartition par catégorie, tendances mois après mois : comprends tes dépenses du quotidien en un coup d'œil.",
+    highlight: true,
   },
   {
     icon: (
@@ -121,10 +122,9 @@ const features = [
         />
       </svg>
     ),
-    title: "Groupes d'épargne partagés",
+    title: "Partage à plusieurs",
     description:
-      "Épargnez ensemble pour un projet commun. Invitez vos proches via un simple lien.",
-    highlight: true,
+      "Voyage, coloc, sorties… ajoutez vos dépenses à plusieurs et voyez en un coup d'œil qui doit combien à qui.",
   },
 ];
 
@@ -134,8 +134,8 @@ export default function Features() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionTitle
           tag="Fonctionnalités"
-          title="Tout ce qu'il faut pour gérer ton budget"
-          description="Budget Copain t'accompagne au quotidien avec des outils simples et puissants."
+          title="Une vraie visibilité sur tes dépenses du quotidien"
+          description="Budget Copain t'accompagne jour après jour pour savoir où va ton argent et garder le contrôle."
         />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -163,11 +163,6 @@ export default function Features() {
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 {f.description}
               </p>
-              {f.highlight && (
-                <span className="mt-3 inline-block text-sm font-semibold text-primary">
-                  En savoir plus →
-                </span>
-              )}
             </div>
           ))}
         </div>

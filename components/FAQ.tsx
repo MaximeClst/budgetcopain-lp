@@ -5,10 +5,6 @@ import SectionTitle from "./SectionTitle";
 
 const faqs = [
   {
-    q: "Comment fonctionnent les projets partagés ?",
-    a: "Crée un projet Perso pour épargner seul, ou Commun pour partager les dépenses à plusieurs. Pour un projet commun, partage le lien d'invitation : chaque membre ajoute ses dépenses et l'app calcule automatiquement les soldes et qui doit combien à qui. Tu restes l'admin du projet.",
-  },
-  {
     q: "Combien coûte Budget Copain Premium ?",
     a: "Deux formules au choix : l'abonnement à 4,99 €/mois (avec 7 jours d'essai gratuit), ou l'accès à vie à 24,99 € en paiement unique, sans abonnement. Les deux débloquent toutes les fonctionnalités Premium.",
   },
@@ -31,6 +27,10 @@ const faqs = [
   {
     q: "Que comprend Premium ?",
     a: "Premium inclut : transactions et catégories illimitées, projets perso et communs illimités, alertes intelligentes, et toutes les futures mises à jour.",
+  },
+  {
+    q: "Comment fonctionnent les projets partagés ?",
+    a: "Crée un projet Perso pour épargner seul, ou Commun pour partager les dépenses à plusieurs. Pour un projet commun, partage le lien d'invitation : chaque membre ajoute ses dépenses et l'app calcule automatiquement les soldes et qui doit combien à qui. Tu restes l'admin du projet.",
   },
   {
     q: "Comment restaurer un achat ?",
