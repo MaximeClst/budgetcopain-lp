@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "L'application est-elle gratuite ?",
-    a: "Oui ! Budget Copain est gratuit avec toutes les fonctionnalités essentielles pour gérer ton budget. Premium débloque les options avancées comme les projets perso et communs illimités.",
+    a: "Non. Budget Copain est une application payante, avec 7 jours d'essai gratuit pour tout tester sans engagement. Ensuite, tu peux choisir l'abonnement à 4,99 €/mois ou l'accès à vie à 24,99 € en paiement unique.",
   },
   {
     q: "Que comprend Premium ?",
